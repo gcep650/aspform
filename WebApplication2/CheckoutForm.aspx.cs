@@ -21,11 +21,12 @@ namespace WebApplication2
             Page lastPage = (Page)Context.Handler;
             try
             {
-                double c = double.Parse(((TextBox)lastPage.FindControl("cookieQ")).Text);
-                double d = double.Parse(((TextBox)lastPage.FindControl("durianQ")).Text);
-                double p = double.Parse(((TextBox)lastPage.FindControl("pomeQ")).Text);
-                double b = double.Parse(((TextBox)lastPage.FindControl("bananaQ")).Text);
-                double pl = double.Parse(((TextBox)lastPage.FindControl("plantQ")).Text);
+
+                double c = double.Parse((string)Session["cookieQ"]);
+                double d = double.Parse((string)Session["durianQ"]);
+                double p = double.Parse((string)Session["pomeQ"]);
+                double b = double.Parse((string)Session["bananaQ"]);
+                double pl = double.Parse((string)Session["plantQ"]);
                 loadTotal(c, d, p, b, pl);
                 totalL.Text = string.Format("{0:C2}", total(c, d, p, b, pl));
             }
@@ -49,6 +50,12 @@ namespace WebApplication2
         protected double total(double cookieC, double durianC, double pomeC, double bananaC, double plantC)
         {
             return (cookieC * cookiePrice) + (durianC * durianPrice) + (pomeC * pomegranitePrice) + (bananaC * bananaPrice) + (plantC * plantPrice);
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Write("<script>alert('Thanks for purchasing!')</script>");
+            Server.Transfer("WebForm1.aspx");
         }
     }
 

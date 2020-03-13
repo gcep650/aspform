@@ -93,5 +93,15 @@ namespace WebApplication2
         {
             changeTB(false, plantQ);
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Session["cookieQ"] = cookieQ.Text;
+            Session["durianQ"] = durianQ.Text;
+            Session["pomeQ"] = pomeQ.Text;
+            Session["bananaQ"] = bananaQ.Text;
+            Session["plantQ"] = plantQ.Text;
+            Response.Redirect("CheckoutForm.aspx");
+        }
     }
 }

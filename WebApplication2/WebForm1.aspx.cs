@@ -16,7 +16,8 @@ namespace WebApplication2
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Label1.Text = TextBox1.Text;
+            //Label1.Text = TextBox1.Text;
+            //Response.Redirect("WebForm2.aspx?msg=" + TextBox1.Text);
         }
 
         protected void Button2_Click(object sender, EventArgs e)

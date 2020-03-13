@@ -133,7 +133,7 @@
         </tr>
     </table>
             <br />
-            <asp:Button ID="Button2" runat="server" PostBackUrl="~/CheckoutForm.aspx" Text="Proceed to Checkout" />
+            <asp:Button ID="Button2" runat="server" Text="Proceed to Checkout" OnClick="Button2_Click" />
         </div>
     </form>
     </body>

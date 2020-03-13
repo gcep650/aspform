@@ -34,7 +34,7 @@
             <br />
         </div>
         <div class="auto-style1">
-            <asp:Button ID="Button2" runat="server" Text="Buy" />
+            <asp:Button ID="Button2" runat="server" Text="Buy" OnClick="Button2_Click" />
         </div>
     </form>
 </body>
